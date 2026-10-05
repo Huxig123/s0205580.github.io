@@ -58,12 +58,21 @@
 
         <!-- 15. Ссылки из областей картинки (map) -->
         <li>
-            <img src="https://via.placeholder.com/300x150" alt="Карта" usemap="#map">
-            <map name="map">
-                <area shape="rect" coords="0,0,150,150" href="https://kubsu.ru/" alt="Прямоугольник">
-                <area shape="circle" coords="225,75,50" href="https://moodle.kubsu.ru/" alt="Круг">
-            </map>
-        </li>
+    <p>Карта-картинка (нажми на левую или правую часть):</p>
+    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='150'><rect width='150' height='150' fill='%232196F3'/><rect x='150' width='150' height='150' fill='%23E91E63'/><text x='75' y='85' fill='white' font-family='sans-serif' font-size='22' font-weight='bold' text-anchor='middle'>ЛЕВО</text><text x='225' y='85' fill='white' font-family='sans-serif' font-size='22' font-weight='bold' text-anchor='middle'>ПРАВО</text></svg>" 
+         usemap="#map" 
+         alt="Карта с левой и правой областью" 
+         width="300" 
+         height="150">
+
+    <map name="map">
+        <!-- Левая половина (синяя): от (0,0) до (150,150) -->
+        <area shape="rect" coords="0,0,150,150" href="https://kubsu.ru/" alt="Левая область">
+        
+        <!-- Правая половина (красная): от (150,0) до (300,150) -->
+        <area shape="rect" coords="150,0,300,150" href="https://moodle.kubsu.ru/" alt="Правая область">
+    </map>
+</li>
 
         <!-- 16. Ссылка с пустым href -->
         <li><a href="">Пустой href</a></li>
