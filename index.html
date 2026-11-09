@@ -8,24 +8,22 @@
 </head>
 <body>
 
-    <!-- Шапка сайта  -->
+    <!-- Шапка и меню на всю ширину  -->
     <header id="main-header">
-        <div class="container header-container">
-            <img src="logo.jpg.png" alt="Логотип сайта" class="logo-img">
-            <span class="site-title">Веб-разработка и веб-сервисы</span>
+        <div class="header-wrapper">
+            <div class="logo-area">
+                <img src="logo.jpg.png" alt="Логотип сайта" class="logo-img">
+                <span class="site-title">Веб-разработка и веб-сервисы</span>
+            </div>
+            <nav id="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="#links-section">Ссылки</a></li>
+                    <li><a href="#table-section">Таблица</a></li>
+                    <li><a href="#form-section">Форма</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-
-    <!-- Навигационное меню  -->
-    <nav id="main-nav">
-        <div class="container">
-            <ul class="nav-menu">
-                <li><a href="#links-section">Ссылки</a></li>
-                <li><a href="#table-section">Таблица</a></li>
-                <li><a href="#form-section">Форма</a></li>
-            </ul>
-        </div>
-    </nav>
 
     <!-- Основное содержимое  -->
     <main class="container main-content">
@@ -77,7 +75,7 @@
             </ul>
         </section>
 
-        <!-- Таблица из Задания 2  -->
+        <!-- Таблица из Задания 2 -->
         <section id="table-section">
             <h2>Таблица данных</h2>
             <table class="custom-table">
@@ -126,7 +124,7 @@
             </table>
         </section>
 
-        <!-- Форма из Задания 1  -->
+        <!-- Форма из Задания 1 -->
         <section id="form-section">
             <h2>Форма</h2>
             <form action="/" method="POST" class="feedback-form">
@@ -153,7 +151,7 @@
 
     </main>
 
-    <!-- Подвал сайта (тянется на 100%) -->
+    <!-- Подвал сайта -->
     <footer id="main-footer">
         <div class="container">
             <p>&copy; 2026 Кубанский государственный университет</p>
