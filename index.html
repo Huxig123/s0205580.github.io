@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- Шапка и меню на всю ширину  -->
+    <!-- Шапка сайта на всю ширину (логотип слева, ссылки справа) -->
     <header id="main-header">
         <div class="header-wrapper">
             <div class="logo-area">
@@ -25,7 +25,7 @@
         </div>
     </header>
 
-    <!-- Основное содержимое  -->
+    <!-- Основное содержимое (ограничено до 960px и по центру) -->
     <main class="container main-content">
 
         <!-- Секция ссылок из Задания 1 -->
@@ -54,11 +54,11 @@
                 <li><a href="https://ru.wikipedia.org/wiki/HTML#История">История HTML на Википедии</a></li>
                 <li>
                     <p>Карта-картинка (нажми на левую или правую часть):</p>
-                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='150'><rect width='150' height='150' fill='%232196F3'/><rect x='150' width='150' height='150' fill='%23E91E63'/><text x='75' y='85' fill='white' font-family='sans-serif' font-size='22' font-weight='bold' text-anchor='middle'>ЛЕВО</text><text x='225' y='85' fill='white' font-family='sans-serif' font-size='22' font-weight='bold' text-anchor='middle'>ПРАВО</text></svg>" 
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='150'><rect width='150' height='150' fill='%232196F3'/><circle cx='225' cy='75' r='75' fill='%23E91E63'/><text x='75' y='85' fill='white' font-family='sans-serif' font-size='22' font-weight='bold' text-anchor='middle'>ЛЕВО</text><text x='225' y='85' fill='white' font-family='sans-serif' font-size='22' font-weight='bold' text-anchor='middle'>ПРАВО</text></svg>" 
                          usemap="#map" alt="Карта с левой и правой областью" width="300" height="150">
                     <map name="map">
                         <area shape="rect" coords="0,0,150,150" href="https://kubsu.ru/" alt="Левая область">
-                        <area shape="rect" coords="150,0,300,150" href="https://moodle.kubsu.ru/" alt="Правая область">
+                        <area shape="circle" coords="225,75,75" href="https://moodle.kubsu.ru/" alt="Правая область">
                     </map>
                 </li>
                 <li><a href="">Пустой href</a></li>
