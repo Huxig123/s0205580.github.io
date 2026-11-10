@@ -3,176 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Задание 4 — Bootstrap Верстка</title>
-    <!-- Bootstrap 5 CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Кастомные стили -->
-    <link rel="stylesheet" href="style.css">
+    <title>Задание 3 — Bootstrap версия</title>
+    
+    <!-- 1. ПОДКЛЮЧАЕМ BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Небольшой кастомный стиль, чтобы сохранить ваш оригинальный синий цвет -->
+    <style>
+        .bg-custom-blue { background-color: #2c3e50 !important; }
+        .text-custom-blue { color: #2c3e50 !important; }
+        .custom-radio { margin-right: 15px; }
+    </style>
 </head>
-<body class="d-flex flex-column min-vh-100 bg-light">
+<body class="bg-light">
 
-    <!-- Шапка сайта -->
-    <header id="main-header" class="bg-dark text-white py-3">
-        <div class="container d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start">
-            <img src="logo.jpg.png" alt="Логотип сайта" class="logo-img rounded-circle">
-            <h1 class="h3 m-0">Название веб сайта</h1>
+    <!-- Шапка сайта (Navbar) -->
+    <!-- navbar-expand-lg делает меню адаптивным (гамбургер на телефонах) -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-custom-blue shadow-sm">
+        <div class="container">
+            <!-- Логотип и название -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="logo.jpg.png" alt="Логотип" class="rounded-circle" style="width: 45px; height: 45px; object-fit: cover;">
+                <span class="fw-bold">Веб-разработка</span>
+            </a>
+            
+            <!-- Кнопка гамбургер для мобильных -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Меню навигации -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#links-section">Ссылки</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#table-section">Таблица</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#form-section">Форма</a></li>
+                </ul>
+            </div>
         </div>
     </header>
 
-    <!-- Меню навигации (Mobile First: вертикальное на телефонах, горизонтальное на md+) -->
-    <nav id="main-nav" class="bg-secondary">
-        <div class="container p-0">
-            <ul class="nav flex-column flex-md-row text-center text-md-start">
-                <li class="nav-item">
-                    <a class="nav-link text-white py-2 px-3 border-bottom border-md-0" href="#links-section">Список ссылок</a>
+    <!-- Основное содержимое -->
+    <!-- container центрирует контент, my-4 задает отступы сверху/снизу, p-4 - внутри -->
+    <main class="container my-4 p-4 bg-white rounded shadow-sm">
+
+        <!-- 1. Секция ссылок -->
+        <section id="links-section" class="mb-5">
+            <h1 class="text-custom-blue mb-3">Задание 1</h1>
+            <h2 class="text-custom-blue mb-3 fs-4">Список ссылок</h2>
+
+            <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item"><a href="http://kubsu.ru/">Сайт КубГУ (HTTP)</a></li>
+                <li class="list-group-item"><a href="https://kubsu.ru/">Сайт КубГУ (HTTPS)</a></li>
+                <li class="list-group-item">
+                    <a href="https://kubsu.ru/">
+                        <img src="https://www.kubsu.ru/sites/all/themes/portal_kubsu/logo.png" alt="Логотип КубГУ" width="150" class="img-fluid">
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white py-2 px-3 border-bottom border-md-0" href="#table-section">Таблица</a>
+                <li class="list-group-item"><a href="/about/">О нас</a></li>
+                <li class="list-group-item"><a href="/">Главная</a></li>
+                <li class="list-group-item"><a href="#form-section">К форме</a></li>
+                <li class="list-group-item"><a href="https://kubsu.ru/?a=1&amp;b=2&amp;c=3">Ссылка с 3 параметрами</a></li>
+                <li class="list-group-item"><a href="https://kubsu.ru/?id=100">Ссылка с id</a></li>
+                <li class="list-group-item"><a href="page.html">Страница в текущей папке</a></li>
+                <li class="list-group-item"><a href="about/page.html">Страница в папке about</a></li>
+                <li class="list-group-item"><a href="../page.html">На уровень выше</a></li>
+                <li class="list-group-item"><a href="../../page.html">На два уровня выше</a></li>
+                <li class="list-group-item"><p class="mb-0">Вы можете перейти на <a href="https://kubsu.ru/">сайт КубГУ</a> прямо из этого текста.</p></li>
+                <li class="list-group-item"><a href="https://ru.wikipedia.org/wiki/HTML#История">История HTML на Википедии</a></li>
+                <li class="list-group-item">
+                    <p class="mb-2">Карта-картинка (нажми на левую или правую часть):</p>
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='150'><rect width='150' height='150' fill='%232196F3'/><circle cx='225' cy='75' r='75' fill='%23E91E63'/><text x='75' y='85' fill='white' font-family='sans-serif' font-size='22' font-weight='bold' text-anchor='middle'>ЛЕВО</text><text x='225' y='85' fill='white' font-family='sans-serif' font-size='22' font-weight='bold' text-anchor='middle'>ПРАВО</text></svg>" 
+                         usemap="#map" alt="Карта с левой и правой областью" width="300" height="150" class="img-fluid rounded">
+                    <map name="map">
+                        <area shape="rect" coords="0,0,150,150" href="https://kubsu.ru/" alt="Левая область">
+                        <area shape="circle" coords="225,75,75" href="https://moodle.kubsu.ru/" alt="Правая область">
+                    </map>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white py-2 px-3" href="#form-section">Форма</a>
+                <li class="list-group-item"><a href="">Пустой href</a></li>
+                <li class="list-group-item"><a>Ссылка без href</a></li>
+                <li class="list-group-item"><a href="https://example.com" rel="nofollow">Запрещен переход</a></li>
+                <li class="list-group-item"><a href="https://example.com" rel="noindex nofollow">Запрещена индексация</a></li>
+                <li class="list-group-item">
+                    <ol class="mb-0">
+                        <li><a href="https://kubsu.ru/" title="Кубанский Государственный Университет">КубГУ</a></li>
+                        <li><a href="https://moodle.kubsu.ru/" title="Личный кабинет Moodle">Moodle</a></li>
+                    </ol>
                 </li>
+                <li class="list-group-item"><a href="ftp://user:password@ftp.example.com/file.zip">Скачать файл FTP</a></li>
             </ul>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Основной контент по сетке Bootstrap -->
-    <main class="container my-4 flex-grow-1">
-        <div class="row">
+        <hr class="my-5"> <!-- Разделитель -->
+
+        <!-- 2. Таблица -->
+        <section id="table-section" class="mb-5">
+            <h2 class="text-custom-blue mb-3 fs-4">Таблица данных</h2>
             
-            <!-- 1. Список ссылок (На мобильных order-2, на ПК order-md-1) -->
-            <section id="links-section" class="col-12 order-2 order-md-1 mb-4">
-                <div class="card p-3 shadow-sm">
-                    <h2 class="h4 mb-3">Список ссылок</h2>
-                    <ul>
-                        <li><a href="http://kubsu.ru/">Сайт КубГУ (HTTP)</a></li>
-                        <li><a href="https://kubsu.ru/">Сайт КубГУ (HTTPS)</a></li>
-                        <li>
-                            <a href="https://kubsu.ru/">
-                                <img src="https://www.kubsu.ru/sites/all/themes/portal_kubsu/logo.png" alt="Логотип КубГУ" width="150">
-                            </a>
-                        </li>
-                        <li><a href="/about/">О нас</a></li>
-                        <li><a href="/">Главная</a></li>
-                        <li><a href="#form-section">К форме</a></li>
-                        <li><a href="https://kubsu.ru/?a=1&amp;b=2&amp;c=3">Ссылка с 3 параметрами</a></li>
-                        <li><a href="https://kubsu.ru/?id=100">Ссылка с id</a></li>
-                        <li><a href="page.html">Страница в текущей папке</a></li>
-                        <li><a href="about/page.html">Страница в папке about</a></li>
-                        <li><a href="../page.html">На уровень выше</a></li>
-                        <li><a href="../../page.html">На два уровня выше</a></li>
-                        <li><p>Вы можете перейти на <a href="https://kubsu.ru/">сайт КубГУ</a> прямо из этого текста.</p></li>
-                        <li><a href="https://ru.wikipedia.org/wiki/HTML#История">История HTML на Википедии</a></li>
-                        <li>
-                            <p>Карта-картинка (нажми на левую или правую часть):</p>
-                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='150'><rect width='150' height='150' fill='%232196F3'/><rect x='150' width='150' height='150' fill='%23E91E63'/><text x='75' y='85' fill='white' font-family='sans-serif' font-size='22' font-weight='bold' text-anchor='middle'>ЛЕВО</text><text x='225' y='85' fill='white' font-family='sans-serif' font-size='22' font-weight='bold' text-anchor='middle'>ПРАВО</text></svg>" 
-                                 usemap="#map" alt="Карта с левой и правой областью" width="300" height="150">
-                            <map name="map">
-                                <area shape="rect" coords="0,0,150,150" href="https://kubsu.ru/" alt="Левая область">
-                                <area shape="rect" coords="150,0,300,150" href="https://moodle.kubsu.ru/" alt="Правая область">
-                            </map>
-                        </li>
-                        <li><a href="">Пустой href</a></li>
-                        <li><a>Ссылка без href</a></li>
-                        <li><a href="https://example.com" rel="nofollow">Запрещен переход</a></li>
-                        <li><a href="https://example.com" rel="noindex nofollow">Запрещена индексация</a></li>
-                        <li>
-                            <ol>
-                                <li><a href="https://kubsu.ru/" title="Кубанский Государственный Университет">КубГУ</a></li>
-                                <li><a href="https://moodle.kubsu.ru/" title="Личный кабинет Moodle">Moodle</a></li>
-                            </ol>
-                        </li>
-                        <li><a href="ftp://user:password@ftp.example.com/file.zip">Скачать файл FTP</a></li>
-                    </ul>
-                </div>
-            </section>
+            <!-- table-responsive делает таблицу прокручиваемой на телефонах -->
+            <div class="table-responsive">
+                <!-- table, table-bordered, table-striped, text-center, align-middle - классы Bootstrap -->
+                <table class="table table-bordered table-striped table-hover text-center align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Категория</th>
+                            <th>Показатель 1</th>
+                            <th>Показатель 2</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">Группа A</td>
+                            <td>120</td>
+                            <td>140</td>
+                            <td>Активно</td>
+                        </tr>
+                        <tr>
+                            <td>210</td>
+                            <td>230</td>
+                            <td>В обработке</td>
+                        </tr>
+                        <tr>
+                            <td>Группа B</td>
+                            <td colspan="2">350 (Объединено)</td>
+                            <td>Завершено</td>
+                        </tr>
+                        <tr>
+                            <td>Группа C</td>
+                            <td>410</td>
+                            <td>420</td>
+                            <td>Активно</td>
+                        </tr>
+                        <tr>
+                            <td>Группа D</td>
+                            <td>510</td>
+                            <td>530</td>
+                            <td>В архиве</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Общий итог</td>
+                            <td>Успешно</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-            <!-- 2. Таблица (На мобильных order-1, на ПК order-md-2) -->
-            <section id="table-section" class="col-12 order-1 order-md-2 mb-4">
-                <div class="card p-3 shadow-sm">
-                    <h2 class="h4 mb-3">Таблица данных</h2>
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped align-middle m-0">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>Категория</th>
-                                    <th>Показатель 1</th>
-                                    <th>Показатель 2</th>
-                                    <th>Статус</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td rowspan="2">Группа A (Объединено по вертикали)</td>
-                                    <td>120</td>
-                                    <td>140</td>
-                                    <td>Активно</td>
-                                </tr>
-                                <tr>
-                                    <td>210</td>
-                                    <td>230</td>
-                                    <td>В обработке</td>
-                                </tr>
-                                <tr>
-                                    <td>Группа B</td>
-                                    <td colspan="2">350 (Объединено по горизонтали)</td>
-                                    <td>Завершено</td>
-                                </tr>
-                                <tr>
-                                    <td>Группа C</td>
-                                    <td>410</td>
-                                    <td>420</td>
-                                    <td>Активно</td>
-                                </tr>
-                                <tr>
-                                    <td>Группа D</td>
-                                    <td>510</td>
-                                    <td>530</td>
-                                    <td>В архиве</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">Общий итоговый результат</td>
-                                    <td>Успешно</td>
-                                </tr>
-                            </tbody>
-                        </table>
+        <hr class="my-5">
+
+        <!-- 3. Форма -->
+        <section id="form-section">
+            <h2 class="text-custom-blue mb-3 fs-4">Форма</h2>
+            
+            <form action="/" method="POST">
+                
+                <!-- Группа полей ввода формы -->
+                <div class="mb-3">
+                    <label for="fio" class="form-label">ФИО:</label>
+                    <input type="text" class="form-control" id="fio" name="fio">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+
+                <div class="mb-3">
+                    <label for="birthday" class="form-label">Дата рождения:</label>
+                    <input type="date" class="form-control" id="birthday" name="birthday">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label d-block">Пол:</label>
+                    <div class="form-check form-check-inline custom-radio">
+                        <input class="form-check-input" type="radio" name="sex" id="sex_m" value="m">
+                        <label class="form-check-label" for="sex_m">Мужской</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sex" id="sex_f" value="f">
+                        <label class="form-check-label" for="sex_f">Женский</label>
                     </div>
                 </div>
-            </section>
 
-            <!-- 3. Форма (order-3) -->
-            <section id="form-section" class="col-12 order-3 mb-4">
-                <div class="card p-3 shadow-sm">
-                    <h2 class="h4 mb-3">Форма обратной связи</h2>
-                    <form action="/" method="POST" class="feedback-form">
-                        <div class="mb-3">
-                            <label for="user-name" class="form-label">Имя:</label>
-                            <input type="text" id="user-name" name="name" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="user-email" class="form-label">E-mail:</label>
-                            <input type="email" id="user-email" name="email" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="user-msg" class="form-label">Сообщение:</label>
-                            <textarea id="user-msg" name="message" class="form-control" rows="4"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Отправить</button>
-                    </form>
+                <div class="mb-3">
+                    <label for="lang" class="form-label">Любимый язык программирования:</label>
+                    <select class="form-select" name="lang[]" id="lang" multiple size="4">
+                        <option value="Pascal">Pascal</option>
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                        <option value="JavaScript">JavaScript</option>
+                    </select>
                 </div>
-            </section>
 
-        </div>
+                <div class="mb-3">
+                    <label for="bio" class="form-label">Биография:</label>
+                    <textarea class="form-control" id="bio" name="bio" rows="3"></textarea>
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="contract" name="contract">
+                    <label class="form-check-label" for="contract">С контрактом ознакомлен</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="background-color: #2c3e50; border-color: #2c3e50;">Сохранить</button>
+            </form>
+        </section>
+
     </main>
 
     <!-- Подвал сайта -->
-    <footer id="main-footer" class="bg-dark text-white text-center py-3 mt-auto">
+    <footer class="bg-custom-blue text-white text-center py-3 mt-5">
         <div class="container">
-            <p class="m-0">&copy; 2026 Все права защищены.</p>
+            <p class="mb-0">&copy; 2026 Кубанский государственный университет</p>
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 2. ПОДКЛЮЧАЕМ BOOTSTRAP JS (нужен для работы мобильного меню) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
